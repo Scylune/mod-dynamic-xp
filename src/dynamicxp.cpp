@@ -3,6 +3,7 @@ Credits
 Script reworked by Micrah/Milestorme and Poszer (Poszer is the Best)
 Module Created by Micrah/Milestorme
 Original Script from AshmaneCore https://github.com/conan513 Single Player Project
+2024-07-22 Replaced all getLevel() with GetLevel() to match AzerothCore
 */
 
 #include "Configuration/Config.h"
@@ -28,21 +29,21 @@ public:
     {
         if (sConfigMgr->GetOption<bool>("Dynamic.XP.Rate", true))
         {
-            if (player->getLevel() <= 9)
+            if (player->GetLevel() <= 9)
                 amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.1-9", 1);
-            else if (player->getLevel() <= 19)
+            else if (player->GetLevel() <= 19)
                 amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.10-19", 2);
-            else if (player->getLevel() <= 29)
+            else if (player->GetLevel() <= 29)
                 amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.20-29", 3);
-            else if (player->getLevel() <= 39)
+            else if (player->GetLevel() <= 39)
                 amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.30-39", 4);
-            else if (player->getLevel() <= 49)
+            else if (player->GetLevel() <= 49)
                 amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.40-49", 5);
-            else if (player->getLevel() <= 59)
+            else if (player->GetLevel() <= 59)
                 amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.50-59", 6);
-            else if (player->getLevel() <= 69)
+            else if (player->GetLevel() <= 69)
                 amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.60-69", 7);
-            else if (player->getLevel() <= 79)
+            else if (player->GetLevel() <= 79)
                 amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.70-79", 8);
         }
     }
